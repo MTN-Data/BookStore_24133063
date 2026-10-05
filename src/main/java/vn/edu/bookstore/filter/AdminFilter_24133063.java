@@ -1,0 +1,3 @@
+package vn.edu.bookstore.filter;
+import vn.edu.bookstore.model.*;import javax.servlet.*;import javax.servlet.http.*;import javax.servlet.annotation.*;import java.io.*;
+@WebFilter("/admin/*") public class AdminFilter_24133063 implements Filter {public void doFilter(ServletRequest request,ServletResponse response,FilterChain chain)throws IOException,ServletException{HttpServletRequest q=(HttpServletRequest)request;HttpServletResponse r=(HttpServletResponse)response;User_24133063 u=(User_24133063)q.getSession().getAttribute("user");if(u==null){r.sendRedirect(q.getContextPath()+"/login");return;}if(!u.admin){r.sendError(403);return;}chain.doFilter(request,response);}}

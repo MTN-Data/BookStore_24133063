@@ -1,0 +1,3 @@
+package vn.edu.bookstore.controller;
+import javax.servlet.*;import javax.servlet.http.*;import java.io.*;
+public abstract class Web_24133063 extends HttpServlet {protected void view(HttpServletRequest q,HttpServletResponse r,String page)throws ServletException,IOException{q.getRequestDispatcher("/WEB-INF/views/"+page+".jsp").forward(q,r);}protected int number(String s,int fallback){try{return Integer.parseInt(s);}catch(Exception e){return fallback;}}protected void error(HttpServletRequest q,HttpServletResponse r,Exception e)throws ServletException,IOException{q.setAttribute("error",e.getMessage());view(q,r,"error");}}
